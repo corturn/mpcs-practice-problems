@@ -51,5 +51,3 @@ def test_board() -> list[list[int]]:
          [1, 0, 3, 1, 3],
          [0, 4, 0, 0, 0],
          [0, 1, 2, 0, 0]]
-
-print(num_captures(test_board()))

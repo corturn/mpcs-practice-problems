@@ -28,5 +28,3 @@ def firstlast(stream: str, character: str) -> int:
             return pos
         pos += len(token) + 1
     return -1
-
-print(firstlast("abc xyzaxyaz xx", 'a'))

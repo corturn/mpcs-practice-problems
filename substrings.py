@@ -16,4 +16,3 @@ def count_substrs(str_list: list[str], target: str) -> int:
         if target in s:
             count += 1
     return count
-print(count_substrs(["wttw", "yz", "abcd", "wxyz", "wbez"], "xyz"))
