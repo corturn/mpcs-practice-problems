@@ -22,9 +22,7 @@ def firstlast(stream: str, character: str) -> int:
     '''
     # TODO: Implement this function
     tokens = stream.split()
-    pos = 0
-    for token in tokens:
+    for token in tokens: 
         if token[0] == character and token[-1] == character:
-            return pos
-        pos += len(token) + 1
+            return stream.index(token)
     return -1

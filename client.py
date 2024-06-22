@@ -53,9 +53,8 @@ class Client:
             True if the tool was successfully added, False otherwise
         '''
         # TODO: Implement this method.
-        if not tool.is_available():
-            return False
-        if self.__balance < tool.credits_needed():
+        if tool is None or any(tool.type == t.type for t in self.tools) \
+            or not tool.is_available() or self.__balance < tool.credits_needed():
             return False
         self.__balance -= tool.credits_needed()
         tool.borrow_tool(self)
@@ -72,7 +71,7 @@ class Client:
         Returns:
             True if the tool was successfully removed, False otherwise
         '''
-        if tool not in self.tools:
+        if tool is None or not tool in self.tools or tool.is_available():
             return False
         self.__balance += tool.credits_needed()
         self.tools.remove(tool)

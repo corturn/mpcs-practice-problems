@@ -55,7 +55,6 @@ class Author:
         """
         matches = []
         for book in self.__books:
-            for keyword in keywords:
-                if book.matches_keyword(keyword):
-                    matches.append(book)
+            if all(book.matches_keyword(keyword) for keyword in keywords):
+                matches.append(book)
         return matches
